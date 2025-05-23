@@ -28,6 +28,7 @@ function App() {
   const handleSubmit = async (e) => {
     e.preventDefault()
 
+    
     const product = {
       name,
       price
