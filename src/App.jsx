@@ -32,14 +32,17 @@ function App() {
       name,
       price
     }
-      const res = await fetch(url,{
-        method: 'POST',
-        headers: {
-          'Content-type': 'application/json'
-        },
-        body: JSON.stringify(product)
-      })
-      console.log(res)
+    const res = await fetch(url, {
+      method: 'POST',
+      headers: {
+        'Content-type': 'application/json'
+      },
+      body: JSON.stringify(product)
+    })
+    
+    
+    const addedProduct = await res.json()
+    setProducts((prevProducts)=> [...prevProducts, addedProduct])
   }
 
 
@@ -53,7 +56,7 @@ function App() {
         </ul>
       ))}
 
-      <div  className='form-container'>
+      <div className='form-container'>
         <form onSubmit={handleSubmit}>
 
           <input type="text" placeholder='nome' value={name} onChange={(e) => setName(e.target.value)} />
