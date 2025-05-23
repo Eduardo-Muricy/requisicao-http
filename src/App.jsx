@@ -53,7 +53,7 @@ function App() {
         </ul>
       ))}
 
-      <div  className='form-container'>
+      <div  className='form-container '>
         <form onSubmit={handleSubmit}>
 
           <input type="text" placeholder='nome' value={name} onChange={(e) => setName(e.target.value)} />
